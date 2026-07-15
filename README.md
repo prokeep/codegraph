@@ -1,4 +1,14 @@
-> **⚠️ This is a Prokeep-internal fork.** Published to npm as `@prokeep/codegraph`. This branch (`feat/elixir-support`) tracks upstream [`colbymchenry/codegraph`](https://github.com/colbymchenry/codegraph) `main` **plus** upstream PR [#1264](https://github.com/colbymchenry/codegraph/pull/1264) (Elixir language support, by @w0lan), rebased/updated as that PR moves — currently at commit [`6bbf565`](https://github.com/colbymchenry/codegraph/pull/1264/commits/6bbf565b149be19362913415a822a8aae76f2573). We closed our own earlier Elixir PR ([#1250](https://github.com/colbymchenry/codegraph/pull/1250)) in favor of #1264. Once #1264 merges upstream, drop this fork and install `@colbymchenry/codegraph` directly. See `CLAUDE.local.md` for the publish process.
+> **⚠️ This is a Prokeep-internal fork.** Published to npm as `@prokeep/codegraph`. This branch (`feat/elixir-support`) tracks upstream [`colbymchenry/codegraph`](https://github.com/colbymchenry/codegraph) `main` **plus** upstream PR [#1264](https://github.com/colbymchenry/codegraph/pull/1264) (Elixir language support, by @w0lan), rebased/updated as that PR moves — currently at commit [`6bbf565`](https://github.com/colbymchenry/codegraph/pull/1264/commits/6bbf565b149be19362913415a822a8aae76f2573). We closed our own earlier Elixir PR ([#1250](https://github.com/colbymchenry/codegraph/pull/1250)) in favor of #1264. Once #1264 merges upstream, drop this fork and install `@colbymchenry/codegraph` directly.
+>
+> **To publish:** `package.json`'s `name`/`version` intentionally stay `@colbymchenry/codegraph` in source to avoid merge conflicts with upstream. Before publishing, override them locally (don't commit the change):
+> ```bash
+> npm pkg set name=@prokeep/codegraph version=1.4.1-elixir.<n> --no-workspaces
+> npm run build
+> npm publish --access restricted --tag latest   # --tag latest is required — npm otherwise infers the dist-tag "elixir" from the prerelease id and silently breaks the upgrade path
+> npm view @prokeep/codegraph dist-tags --json   # confirm "latest" now points at the version you just published
+> npm pkg set name=@colbymchenry/codegraph version=<upstream-version> --no-workspaces   # revert
+> ```
+> Bump `<n>` each publish; keep the version's non-prerelease part matching whatever upstream version this branch is rebased onto. Update the tracked commit hash above whenever this branch is reset onto a newer version of #1264 (or onto `main`, once it merges).
 
 <div align="center">
 
