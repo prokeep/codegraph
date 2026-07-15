@@ -1,3 +1,5 @@
+> **⚠️ This is a Prokeep-internal fork.** Published to npm as `@prokeep/codegraph`. This branch (`feat/elixir-support`) tracks upstream [`colbymchenry/codegraph`](https://github.com/colbymchenry/codegraph) `main` **plus** upstream PR [#1264](https://github.com/colbymchenry/codegraph/pull/1264) (Elixir language support, by @w0lan), rebased/updated as that PR moves — currently at commit [`6bbf565`](https://github.com/colbymchenry/codegraph/pull/1264/commits/6bbf565b149be19362913415a822a8aae76f2573). We closed our own earlier Elixir PR ([#1250](https://github.com/colbymchenry/codegraph/pull/1250)) in favor of #1264. Once #1264 merges upstream, drop this fork and install `@colbymchenry/codegraph` directly. See `CLAUDE.local.md` for the publish process.
+
 <div align="center">
 
 # CodeGraph
